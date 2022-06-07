@@ -6,12 +6,17 @@ module.exports = {
       bg: '#cddc39',
       white: '#FFFFFF',
       red: '#b9233e',
-      green: '#2e6549'
+      green: '#304b3b',
+      brown: '#8c4d41',
+      black: '#000000'
     },
     fontFamily: {
       raleway: ["raleway", "sans-serif"],
-      ralewayB: ["ralewayB", "sans-serif"]
-    }
+      ralewayB: ["ralewayB", "sans-serif"],
+    },
+    gridTemplateColumns: {
+      'fluid': 'repeat(auto-fit, minmax(20rem, 1fr))',
+    },
   },
   plugins: [],
 };
