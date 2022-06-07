@@ -6,7 +6,6 @@
         <form action="" method="POST">
           <div class="form-container flex flex-col gap-4">
             <label class="text-green text-2xl" for="name"><%= title %></label>
-            <input type="file" name="image">
             <input class="font-raleway" type="text" name="name" required="true"
             <% if (post) { %> value="<%= (typeof brand === undefined) ? "" : brand.name %>"
             <% } %>>
