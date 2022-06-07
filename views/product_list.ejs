@@ -1,0 +1,24 @@
+<body
+  class="box-border w-screen text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-bg">
+  <div class="max-w-full min-h-screen flex flex-col">
+    <%- include('./partials/header.ejs') %>
+    <div class="p-10 font-ralewayB text-center flex flex-col max-w-full">
+        <div class="flex justify-center"><a class="border-solid border-2 rounded-full bg-brown text-white p-2 w-1/2 mb-1" href="/product/create">+Create Product</a></div>
+        <ul class="grid grid-cols-fluid place place-content-center">
+          <% product_list.forEach(element => { %>
+            <a href=<%= element.url %>>
+            <li class="border-solid border-2 rounded-md m-1 p-2 text-brown"><%= element.name %></li>
+            </a>
+          <% }) %>
+        </ul>
+        <div class="hidden sm:flex items-start justify-center flex-1">
+          <img
+            class="max-h-full max-w-[15rem] sm:max-w-[20rem] m:max-w-[25rem] lg:max-w-[30rem]"
+            src="/images/productImage.svg"
+            alt="person holding box"
+          />
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </div>
+</body>

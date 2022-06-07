@@ -1,0 +1,47 @@
+<body class="box-border w-screen text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-bg">
+  <div class="max-w-full min-h-screen flex flex-col">
+    <%- include('./partials/header.ejs') %>
+    <div class="flex p-10 font-ralewayB max-w-full max-h-full">
+      <div class="flex flex-col max-w-full max-h-full">
+        <div class="flex items-center justify-center gap-1">
+          <h1 class="text-4xl text-brown"><%= product_details.name %></h1>
+          <div class="flex justify-center">
+            <a  href="<%= product_details.url + '/update' %>">
+              <span class="iconify" data-icon="clarity:edit-solid" style="color: #8c4d41;" data-width="32" data-height="32"></span>
+            </a>
+            <a href="<%= product_details.url + '/delete' %>">
+              <span class="iconify" data-icon="bi:trash" style="color: #8c4d41;" data-width="32" data-height="32"></span>
+            </a>
+          </div>
+        </div>
+        <ul>
+          <% (Object.entries(JSON.parse(JSON.stringify(product_details)))).forEach(element => { %>
+            <% if(element[0] !== '_id' && element[0] !== 'name'){ %>
+              <% if (element[0] === 'serving_size') { %>
+                <li class="py-2 border-solid border-2 rounded-md my-4 px-2 text-brown"><%= `serving size : ${element[1]}` %></li>
+              <%} else if (element[0] === 'weight') { %>
+                <li class="py-2 border-solid border-2 rounded-md my-4 px-2 text-brown"><%= `${element[0]}  : ${element[1]} oz` %></li>
+              <%} else if (element[0] === 'price') { %>
+                <li class="py-2 border-solid border-2 rounded-md my-4 px-2 text-brown"><%= `${element[0]} : $${element[1]}` %></li>
+              <%} else if (element[0] === 'description') { %>
+                <%  %> 
+              <%} else { %>
+                <li class="py-2 border-solid border-2 rounded-md my-4 px-2 text-brown"><%= `${element[0]} : ${element[1]}` %></li>
+              <% } %>
+            <% } %>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="hidden sm:flex items-start justify-center flex-1">
+        <img
+          class="max-h-full max-w-[15rem] sm:max-w-[20rem] m:max-w-[25rem] lg:max-w-[30rem]"
+          src="/images/productImage.svg"
+          alt="products image"
+        />
+      </div>
+    </div>
+    <p class="flex justify-center px-6"><%= product_details.description %></p> 
+  </div>
+  <%- include('./partials/footer.ejs') %>
+</body>
+
