@@ -7,7 +7,7 @@ const product_controller = require("../controllers/productController");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Supplements Warehouse" });
 });
 
 /// CATEGORY ROUTES ///
@@ -16,7 +16,10 @@ router.get("/", function (req, res, next) {
 router.get("/category/create", category_controller.category_create_get);
 
 //POST request for creating Category.
-router.post("/category/create", category_controller.category_create_post);
+router.post(
+  "/category/create",
+  category_controller.category_create_post
+);
 
 // GET request to delete Category.
 router.get("/category/:id/delete", category_controller.category_delete_get);

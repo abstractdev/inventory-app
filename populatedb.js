@@ -102,16 +102,16 @@ function createCategoryBrand(cb) {
   async.series(
     [
       function (callback) {
-        categoryCreate("Vitamin", callback);
+        categoryCreate("Vitamins", callback);
       },
       function (callback) {
-        categoryCreate("Herb", callback);
+        categoryCreate("Herbs", callback);
       },
       function (callback) {
         categoryCreate("Food", callback);
       },
       function (callback) {
-        categoryCreate("Drink", callback);
+        categoryCreate("Drinks", callback);
       },
       function (callback) {
         categoryCreate("Protein", callback);
