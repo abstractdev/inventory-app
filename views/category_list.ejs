@@ -1,0 +1,25 @@
+<body class="box-border w-screen text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-bg">
+  <div class="max-w-full min-h-screen flex flex-col">
+    <%- include('./partials/header.ejs') %>
+    <div class="flex p-10 font-ralewayB justify-center sm:items-start sm:justify-start">
+      <div class="flex flex-col text-center">
+        <div class="flex justify-center"><a class="border-solid border-2 rounded-full bg-red text-white p-2 mb-1" href="/category/create">+Create Category</a></div>
+        <ul class="grid grid-cols-fluid">
+          <% category_list.forEach(element => { %>
+            <a href=<%= element.url %>>
+            <li class="border-solid border-2 rounded-md text-red m-1 p-2"><%= element.name %></li>
+            </a>
+          <% }) %>
+        </ul>
+      </div>
+        <div class="hidden sm:flex items-start justify-center flex-1">
+          <img
+            class="max-h-full max-w-[15rem] sm:max-w-[20rem] m:max-w-[25rem] lg:max-w-[30rem]"
+            src="/images/categoriesImage.svg"
+            alt="person holding clipboard"
+          />
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </div>
+</body>
