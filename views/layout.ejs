@@ -4,16 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Inventory App</title>
+    <title><%= (typeof title != "undefined" ? title : "") %></title>
   </head>
-  <body
-    class="box-border w-screen h-screen font-raleway text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
-  >
-    <div class="max-w-full h-full grid grid-rows-6">
-      <%- include('./partials/header.ejs') %> <%- include('./partials/main.ejs')
-      %>
-    </div>
-    <%- include('./partials/footer.ejs') %>
-  </body>
+    <%- body %>
 </html>
