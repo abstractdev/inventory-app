@@ -2,6 +2,9 @@
   "name": "inventory-app",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "start": "nodemon ./bin/www",
     "tw": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
