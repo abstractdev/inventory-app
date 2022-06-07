@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p class="text-red-700">Welcome to <%= title %></p>
-    <%- home %>
-  </body>
-</html>
+<body class="box-border w-screen text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-bg">
+  <div class="max-w-full min-h-screen flex flex-col">
+    <%- include('./partials/header.ejs') %>
+    <div class="font-ralewayB text-center flex flex-col max-w-full ">
+      <img
+      class="max-h-full inline-block"
+      src="/images/indexImage1.svg"
+      alt="Index image"
+    />
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </div>
+</body>
