@@ -1,0 +1,35 @@
+<body class="box-border w-screen text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl bg-bg">
+  <div class="max-w-full min-h-screen flex flex-col">
+    <%- include('./partials/header.ejs') %>
+    <div class="flex p-10 font-ralewayB justify-center sm:items-start sm:justify-start">
+      <div class="sm:justify-center items-center pt-10">
+        <form action="" method="POST">
+          <div class="form-container flex flex-col gap-4">
+            <label class="text-green text-2xl" for="name"><%= title %></label>
+            <input type="file" name="image">
+            <input class="font-raleway" type="text" name="name" required="true"
+            <% if (post) { %> value="<%= (typeof brand === undefined) ? "" : brand.name %>"
+            <% } %>>
+            <button class="bg-green text-white border-2 border-white p-1 rounded-md" type="submit">Submit</button>
+          </div>
+        </form>
+        <% if (post) { %>
+          <% if (errors) { %>
+            <% errors.forEach(function(error) { %>
+              <li class="list-none"><%- error.msg %></li>
+            <% }); %>
+          <% } %>
+        <% } %>
+      </div>
+        <div class="hidden sm:flex items-start justify-center flex-1">
+          <img
+            class="max-h-full max-w-[15rem] sm:max-w-[20rem] m:max-w-[25rem] lg:max-w-[30rem]"
+            src="/images/brandsImage.svg"
+            alt="person with magnifying glass"
+          />
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </div>
+</body>
+
