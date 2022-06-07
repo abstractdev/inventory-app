@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+mongoose.Schema.Types.String.checkRequired(v => typeof v ==='string');
 
 const ProductSchema = new Schema({
   name: { type: String, required: true, maxLength: 256 },
