@@ -59,7 +59,11 @@ exports.category_create_get = function (req, res) {
 // Handle Category create on POST.
 exports.category_create_post = [
   // Validate and sanitize the name field.
-  body("name", "Category name required").trim().isLength({ min: 2 }).escape(),
+  body("name")
+  .trim()
+  .isLength({ min: 1 })
+  .withMessage("Cannot be empty")
+  .escape(),
 
   // Process request after validation and sanitization.
   (req, res, next) => {

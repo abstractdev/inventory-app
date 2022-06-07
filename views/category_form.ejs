@@ -3,10 +3,10 @@
     <%- include('./partials/header.ejs') %>
     <div class="flex p-10 font-ralewayB justify-center sm:items-start sm:justify-start">
       <div class="sm:justify-center items-center pt-10">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST">
           <div class="form-container flex flex-col gap-4">
             <label class="text-red text-2xl" for="name"><%= title %></label>
-            <input class="font-raleway" name="name" required="true"
+            <input class="font-raleway" type="text" name="name" required="true"
               <% if (post) { %>
                 value="<%= (typeof category === undefined) ? "" : category.name %>"
               <% } %>>
